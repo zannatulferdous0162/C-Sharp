@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Factorial_Practice
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Please Enter a Number: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            int value = 1;
+            for (int i = 1; i <= a; i++)
+            {
+                value = value * i;
+            }
+            Console.WriteLine(value);
+
+        }
+    }
+}

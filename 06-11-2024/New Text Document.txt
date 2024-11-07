@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Loop_For
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //int a = 5;
+            //for (int i = 1; i <= a; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //Console.Write("Please Enter the end number : ");
+            //int startNo = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Please Enter the end number : ");
+            //int endNo = Convert.ToInt32(Console.ReadLine());
+            //for (int i = startNo; i <= endNo; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+
+            //Console.Write("Please Enter the end number : ");
+            //int startNo = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Please Enter the end number : ");
+            //int endNo = Convert.ToInt32(Console.ReadLine());
+            //do
+            //{
+            //    Console.WriteLine(startNo);
+            //    startNo++;
+            //}
+            //while (startNo<=endNo);
+
+
+            //while (startNo <= endNo)
+            //{
+            //    Console.WriteLine(startNo);
+            //    startNo++;
+            //}
+
+
+            // Pattern
+            //Console.Write("Please Enter the end number : ");
+            //int startNo = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Please Enter the end number : ");
+            //int endNo = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine();
+            //Console.WriteLine("=============Result=============");
+            //Console.WriteLine();
+            //for (int i = startNo; i <= endNo; i++)
+            //{
+            //    Console.Write(" * ");
+            //}
+            //Console.WriteLine();
+            //Console.ReadLine();
+
+
+
+            Console.Write("Please Enter the end number : ");
+            int startNo = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please Enter the end number : ");
+            int endNo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine("=============Result=============");
+            Console.WriteLine();
+            for (int i = startNo; i <= endNo; i++)
+            {
+                for (int j = i; j <= endNo; j++)
+                {
+                    Console.Write(" * ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
