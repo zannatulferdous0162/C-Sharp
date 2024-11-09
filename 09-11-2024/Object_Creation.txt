@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice_01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Please Enter The First Number: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please Enter The Second Number: ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(addValue(a, b));
+            subValue(a, b);
+            Program p = new Program();
+            Console.WriteLine(p.MultiValue(a, b));
+        }
+
+        int MultiValue(int x, int y)
+        {
+            return x * y;
+        }
+        static void subValue(int x, int y)
+        {
+            Console.WriteLine(x - y);
+        }
+        static int addValue(int x, int y)
+        {
+            return x + y;
+        }
+    }
+}
