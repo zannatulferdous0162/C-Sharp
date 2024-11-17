@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MethodPractice
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Please Enter The First Number: ");
+            double a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please Enter The Second Number: ");
+            double b = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please Enter The Third Number: ");
+            double c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(Method01(a, b, c));
+            //Console.WriteLine(addValue(a, b));
+            //Console.WriteLine(addValue(a, b,c));
+            //subValue(a, b);
+            //Program p = new Program();
+            //Console.WriteLine(p.MultiValue(a, b));
+        }
+        //static double Method01(double x, double y, double p = 20, double q = 30, double r)
+        //{
+        //    return x + y + p + q + r;
+        //}
+        static double Method01(double x, double y, double p = 20, double q = 30)
+        {
+            return x + y + p + q;
+        }
+        static double Method01(double x, double y, double p = 20)
+        {
+            return x + y + p + 5;
+        }
+        double MultiValue(double x, double y)
+        {
+            return x * y;
+        }
+        static void subValue(double x, double y)
+        {
+            Console.WriteLine(x - y);
+        }
+        static double addValue(double x, double y)
+        {
+            return x + y + 5;
+        }
+        static double addValue(double x, int y)
+        {
+            return x + y + 10;
+        }
+        //static int addValue(double x, int y)
+        //{
+        //    return (int)(x + y);
+        //}
+        static double addValue(double x, double y, double z)
+        {
+            return x + y + z;
+        }
+    }
+}

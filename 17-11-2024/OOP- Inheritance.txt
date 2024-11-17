@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    //int p = 20;
+    class Juhan
+    {
+        int a = 24;
+        public int x = 10;
+        int y = 20;
+        protected int z = 25;
+        public Juhan() 
+        {
+            Console.WriteLine("Response from Default Constructor of Juhan");
+        }
+    }
+    class Akram:Juhan
+    {
+        public Akram()
+        {
+            Console.WriteLine("Response from Default Constructor of Akram");
+        }
+        public int a;
+        int b = 30;
+        public static void Test()
+        {            
+            Console.WriteLine("Response from Test Method....");
+        }
+        public string Test2()
+        {
+            return "Response from Test2 Method....";
+        }
+        public static int Test3(int p, int q)
+        {
+            int m = 30;
+            return p + q + m;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Juhan j02;
+            //j02 = new Juhan();
+            //Juhan j01 = new Juhan();
+            //Console.WriteLine(j01.x);
+
+
+            Akram ak01 = new Akram();
+            Console.WriteLine(ak01.a + ak01.a + ak01.x);
+
+        }
+    }
+}

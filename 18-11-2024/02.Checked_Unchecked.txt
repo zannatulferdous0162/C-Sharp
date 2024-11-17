@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //int x = 2147483647;
+            //Console.WriteLine("Original Value: " + x);
+            //x++;
+            //Console.WriteLine("Updated Value: " + x);
+
+
+            //int x = 2147483647;
+            //Console.WriteLine("Original Value: " + x);
+            //unchecked
+            //{
+            //    x++;
+            //    Console.WriteLine("Updated Value: " + x);
+            //}
+
+            int x = 2147483647;
+            Console.WriteLine("Original Value: " + x);
+            checked
+            {
+                x++;
+                Console.WriteLine("Updated Value: " + x);
+            }
+        }
+    }
+}

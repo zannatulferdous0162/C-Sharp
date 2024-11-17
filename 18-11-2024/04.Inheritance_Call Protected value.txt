@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp8
+{
+    class A
+    {
+        public int x = 10;
+        protected int y = 20;
+        public void Add()
+        {
+            x = y;
+        }
+    }
+    class B:A
+    {
+        public int z = 30;
+        public void Test()
+        {
+            z = y;
+            Console.WriteLine(z);
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //A a = new A();
+            //Console.WriteLine(a.x + a.x);
+
+            B b = new B();
+            //Console.WriteLine(b.z + b.z);
+            b.Test();
+        }
+    }
+}

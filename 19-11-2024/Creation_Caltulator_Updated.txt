@@ -1,0 +1,182 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            int fo = int.Parse(txtBoxFirstOperand.Text);
+            int so = int.Parse(txtBoxSecondOperand.Text);
+            if (radBtnAdd.Checked || radBtnDiv.Checked || radBtnMulti.Checked || radBtnRem.Checked || radBtnSub.Checked)
+            {
+                if (radBtnAdd.Checked)
+                {
+                    //MessageBox.Show("Expression: " + (fo + " + " + so).ToString() + "\n" + "Calculated Result: " + (fo + so).ToString());
+                    MessageBox.Show("Expression: " + (fo + " + " + so).ToString() + "\n" + "Calculated Result: " + AddValue(fo,so).ToString());
+                }
+                else if (radBtnSub.Checked)
+                {
+                    MessageBox.Show("Expression: " + (fo + " - " + so).ToString() + "\n" + "Calculated Result: " + SubValue(fo, so).ToString());
+                }
+                else if (radBtnMulti.Checked)
+                {
+                    MessageBox.Show("Expression: " + (fo + " * " + so).ToString() + "\n" + "Calculated Result: " + MultiValue(fo, so).ToString());
+                }
+                else if (radBtnDiv.Checked)
+                {
+                    MessageBox.Show("Expression: " + (fo + " / " + so).ToString() + "\n" + "Calculated Result: " + DivValue(fo, so).ToString());
+                }
+                else if (radBtnRem.Checked)
+                {
+                    MessageBox.Show("Expression: " + (fo + " % " + so).ToString() + "\n" + "Calculated Result: " + RemValue(fo, so).ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Check Anyone......");
+            }
+
+            //================================
+            //int fo = int.Parse(txtBoxFirstOperand.Text);
+            //int so = int.Parse(txtBoxSecondOperand.Text);
+            //if (radBtnAdd.Checked)
+            //{
+            //    MessageBox.Show("Expression: " + (fo + " + " + so).ToString() + "\n" + "Calculated Result: " + (fo + so).ToString());
+            //}
+            //else if (radBtnSub.Checked)
+            //{
+            //    MessageBox.Show("Expression: " + (fo + " - " + so).ToString() + "\n" + "Calculated Result: " + (fo - so).ToString());
+            //}
+            //else if (radBtnMulti.Checked)
+            //{
+            //    MessageBox.Show("Expression: " + (fo + " * " + so).ToString() + "\n" + "Calculated Result: " + (fo * so).ToString());
+            //}
+            //else if (radBtnDiv.Checked)
+            //{
+            //    MessageBox.Show("Expression: " + (fo + " / " + so).ToString() + "\n" + "Calculated Result: " + (fo / so).ToString());
+            //}
+            //else if (radBtnRem.Checked)
+            //{
+            //    MessageBox.Show("Expression: " + (fo + " % " + so).ToString() + "\n" + "Calculated Result: " + (fo % so).ToString());
+            //}
+
+
+            //==========================
+            //int fo = int.Parse(txtBoxFirstOperand.Text);
+            //int so = int.Parse(txtBoxSecondOperand.Text);
+            //if (radBtnAdd.Checked)
+            //{
+            //    txtBoxExpression.Text = fo + " + " + so;
+            //    txtBoxResult.Text = (fo + so).ToString();
+            //    MessageBox.Show((fo + so).ToString());
+            //}
+            //else if (radBtnSub.Checked)
+            //{
+            //    txtBoxExpression.Text = fo + " - " + so;
+            //    txtBoxResult.Text = (fo - so).ToString();
+            //}
+            //else if (radBtnMulti.Checked)
+            //{
+            //    txtBoxExpression.Text = fo + " * " + so;
+            //    txtBoxResult.Text = (fo * so).ToString();
+            //}
+            //else if (radBtnDiv.Checked)
+            //{
+            //    txtBoxExpression.Text = fo + " / " + so;
+            //    txtBoxResult.Text = (fo / so).ToString();
+            //}
+            //else if (radBtnRem.Checked)
+            //{
+            //    txtBoxExpression.Text = fo + " % " + so;
+            //    txtBoxResult.Text = (fo % so).ToString();
+            //}
+        }
+        
+        private void radBtnAdd_CheckedChanged(object sender, EventArgs e)
+        {
+            int fo = int.Parse(txtBoxFirstOperand.Text);
+            int so = int.Parse(txtBoxSecondOperand.Text);
+            txtBoxExpression.Text = fo + " + " + so;
+            txtBoxResult.Text = AddValue(fo, so).ToString();
+        }
+
+        private void radBtnSub_CheckedChanged(object sender, EventArgs e)
+        {
+            int fo = int.Parse(txtBoxFirstOperand.Text);
+            int so = int.Parse(txtBoxSecondOperand.Text);
+            txtBoxExpression.Text = fo + " - " + so;
+            txtBoxResult.Text = SubValue(fo, so).ToString();
+        }
+
+        private void radBtnMulti_CheckedChanged(object sender, EventArgs e)
+        {
+            int fo = int.Parse(txtBoxFirstOperand.Text);
+            int so = int.Parse(txtBoxSecondOperand.Text);
+            txtBoxExpression.Text = fo + " * " + so;
+            txtBoxResult.Text = MultiValue(fo, so).ToString();
+        }
+
+        private void radBtnDiv_CheckedChanged(object sender, EventArgs e)
+        {
+            int fo = int.Parse(txtBoxFirstOperand.Text);
+            int so = int.Parse(txtBoxSecondOperand.Text);
+            txtBoxExpression.Text = fo + " / " + so;
+            txtBoxResult.Text = DivValue(fo, so).ToString();
+        }
+
+        private void radBtnRem_CheckedChanged(object sender, EventArgs e)
+        {
+            int fo = int.Parse(txtBoxFirstOperand.Text);
+            int so = int.Parse(txtBoxSecondOperand.Text);
+            txtBoxExpression.Text = fo + " % " + so;
+            txtBoxResult.Text = RemValue(fo,so).ToString();
+        }
+
+        int AddValue(int x, int y)
+        {
+            return (x + y);
+        }
+        int SubValue(int x, int y)
+        {
+            return (x - y);
+        }
+        int MultiValue(int x, int y)
+        {
+            return (x * y);
+        }
+        int DivValue(int x, int y)
+        {
+            return (x / y);
+        }
+        int RemValue(int x, int y)
+        {
+            return (x % y);
+        }
+
+        
+    }
+}
